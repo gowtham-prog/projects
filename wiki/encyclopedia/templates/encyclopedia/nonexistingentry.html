@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{entryTitle}}
+{% endblock %}
+
+{% block body %} 
+ <h1> Error: No pages found</h1>
+
+ <h3>the entry page named {{entryTitle}} does not found</h3>
+ create a entry
+ <a  href="/newpage">Click here</a>
+{% endblock %}
