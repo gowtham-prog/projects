@@ -1,0 +1,9 @@
+.profile:hover {
+    cursor: pointer;
+}
+
+
+[class^='icon-heart']:hover {
+    transform: scale(1.3);
+    transition: transform .1s;
+}

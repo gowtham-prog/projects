@@ -1,0 +1,47 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div id="newPost" class="row justify-content-center">
+        <div class="form-group col-6">
+            <form action="{% url 'save_post' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <input class="btn btn-primary col-2" type=submit value="Post it">
+                    <input class="form-control col-10" type="text" name="content" placeholder="Tell to the world">                    
+                </div>
+            </form>
+            
+        </div>  
+    </div>
+
+    <div id="profile">
+        <div class="card text-center">
+        <div class="card-header">
+            Following
+            <div id="following-amount"></div>
+        </div>
+        
+        <div class="card-body">
+            <h5 id="profile_username" class="card-title"></h5>
+            <a id="follow-button" type="button" class="btn btn-outline-primary"></a>
+        </div>
+        <div class="card-footer text-muted">
+            followers
+            <div id="followers-amount"></div>
+        </div>
+        
+        </div>
+    </div>
+    <div id="pages" class ="row justify-content-center" >
+        <nav aria-label="Page navigation example">
+        <ul id="pagination" class="pagination">
+        </ul>
+        </nav>    
+    </div>
+    <div id="posts"></div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}
